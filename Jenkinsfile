@@ -7,7 +7,7 @@ pipeline {
     stages{
        stage('Build'){
           steps {
-                sh 'mvn clean package'       
+                sh 'mvn -Dmaven.test.skip=true install'       
                 sh "docker build -t addapi:${env.BUILD_ID} addapi/"
                 sh "docker build -t addsvc:${env.BUILD_ID} addsvc/"               
                 sh 'docker login -u skumar24 -p kukku@240892'
