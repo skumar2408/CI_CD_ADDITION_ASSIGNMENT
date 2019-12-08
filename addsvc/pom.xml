@@ -47,7 +47,7 @@
 
             <classpathPrefix>lib/</classpathPrefix>
 
-            <mainClass>com.cape.addsvc</mainClass>
+            <mainClass>com.cape</mainClass>
 
           </manifest>
 
