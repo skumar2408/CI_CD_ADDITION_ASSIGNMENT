@@ -19,5 +19,13 @@ pipeline {
                 sh "docker push skumar24/addsvc:${env.BUILD_ID}"
           }
        }
+     stage('DeployToProduction') {
+            		steps {
+                		kubernetesDeploy(
+                    			kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
+                    			configs: 'webdev.yml'
+                		)
+            		}
+        	}
    }
 }
